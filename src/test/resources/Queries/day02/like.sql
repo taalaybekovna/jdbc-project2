@@ -36,7 +36,9 @@ where FIRST_NAME LIKE '%r';
 select * from jobs
 where JOB_TITLE LIKE '%Manager';
 
-
+-- how mnay employee we have  (get me any job title information endswith manager from jobs table)
+select count(*) from jobs
+where JOB_TITLE LIKE '%Manager';
 
 
 
