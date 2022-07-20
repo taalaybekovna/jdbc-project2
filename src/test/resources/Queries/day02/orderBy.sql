@@ -38,5 +38,5 @@ order by FIRST_NAME;
 
 -- IQ -->  get me all information from employees based firstname asc and lastname desc
 select * from EMPLOYEES
-order by FIRST_NAME ASC ,LAST_NAME DESC;
+order by FIRST_NAME ASC,LAST_NAME desc ;
 
