@@ -30,3 +30,5 @@ where REGION_ID=1 and COUNTRY_NAME<>'Belgium' ;
 
 select * from COUNTRIES
 where REGION_ID=1 and COUNTRY_NAME not in  ('Belgium') ;
+
+
