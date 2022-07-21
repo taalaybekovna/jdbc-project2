@@ -21,7 +21,10 @@ having count(*)<5
 ;
 
 
-
+--IQ -->  display duplicate first_names from employees table
+select FIRST_NAME,count(*) from EMPLOYEES
+group by FIRST_NAME
+having count(*)>1;
 
 
 
