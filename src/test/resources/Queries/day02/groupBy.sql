@@ -55,6 +55,7 @@ order by REGION_ID;      -- order them based on region_id
 select MANAGER_ID,count(*) from EMPLOYEES
                            where MANAGER_ID IS NOT NULL --ignore null values
 group by MANAGER_ID
-having count(*)>5;
+having count(*)>5
+order by 2 asc;
 
 --
