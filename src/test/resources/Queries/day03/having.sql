@@ -17,9 +17,7 @@ group by JOB_ID;
 -- get me department_id where employees count bigger than 5
 select DEPARTMENT_ID,count(*) from EMPLOYEES
 group by DEPARTMENT_ID
-having count(*)<5
-;
-
+having count(*)<5;
 
 --IQ -->  display duplicate first_names from employees table
 select FIRST_NAME,count(*) from EMPLOYEES
