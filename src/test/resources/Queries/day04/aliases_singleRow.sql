@@ -48,6 +48,8 @@ select EMAIL||'@gmail.com' as full_email from EMPLOYEES;
 -- Another way to concat
 select concat(EMAIL,'@gmail.com') as full_email from EMPLOYEES;
 
+
+
 --LOWER
 --UPPER
 
