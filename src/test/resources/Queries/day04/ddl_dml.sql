@@ -85,3 +85,53 @@ select * from scrumteam;
 
 -- commit work or commit --> BOTH works
 commit ;
+
+
+/*
+ ALTER
+ we will use this keyword to update table structure
+
+
+ */
+
+ -- ADD NEW COLUMN
+ALTER TABLE scrumteam
+ADD gender varchar(20);
+
+select * from scrumteam;
+
+-- Update all scrumteam gender as Male
+UPDATE scrumteam
+SET gender='Male';
+
+-- RENAME COLUMN
+ALTER TABLE scrumteam
+RENAME COLUMN salary TO annual_salary;
+
+--DROP COLUMN --> Delete from table
+ALTER TABLE scrumteam
+DROP COLUMN gender;
+
+--RENAME TABLE
+ALTER TABLE scrumteam
+RENAME TO agileteam;
+
+select * from scrumteam; --> scrumteam --> agileteam (renamed)
+
+select * from agileteam;
+
+
+-- TRUNCATE
+TRUNCATE TABLE agileteam;
+
+-- DROP
+DROP TABLE agileteam;
+
+--IQ--> What is the difference between DROP and TRUNCATE ?
+    -- Trunc --> will delete all table content/data
+    -- DROP  --> Delete table itself with datas
+
+commit;
+
+
+
