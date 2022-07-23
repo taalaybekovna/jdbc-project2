@@ -98,5 +98,7 @@ order by 2;
 select FIRST_NAME,salary from EMPLOYEES
 where SALARY>3000  -- we dont any employee in our db that s why I am using 3000
 order by lower(substr(FIRST_NAME,-3)) asc,SALARY desc ;
--- ıt will order them based on last 3 char and
+-- it will order them based on last 3 char and
 -- if there is same order based on last 3 it will order them based on salary desc order
+
+
