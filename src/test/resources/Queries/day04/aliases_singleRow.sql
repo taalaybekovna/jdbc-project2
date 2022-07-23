@@ -78,3 +78,21 @@ order by length_firstname;
 --by  column index
 select FIRST_NAME,length(FIRST_NAME) as length_firstname from EMPLOYEES
 order by 2;
+
+/*
+ SUBSTR(colName,beginIndex,numberOfChar)
+
+ - if beginIndex is o , it is treated as 1
+ - if beginIndex is negative , it will start from backward of data
+ - if numberOfChar is omitted , it works till the end
+
+ */
+
+ -- Display all initial from employees --> Steven King --> S.K.
+ select substr(FIRST_NAME,0,1)||'.'||substr(LAST_NAME,0,1)||'.' from EMPLOYEES;
+
+ select substr(FIRST_NAME,1,1)||'.'||substr(LAST_NAME,1,1)||'.' from EMPLOYEES;
+
+
+-- IQ from screenshot
+select FIRST_NAME
