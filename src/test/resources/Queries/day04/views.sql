@@ -6,3 +6,10 @@ select substr(FIRST_NAME,1,1)||'.'||substr(LAST_NAME,1,1)||'.' as initials  ,
 
 
 -- S.K. Steven makes 24000
+select * from EmployeesInfo;
+
+select initials from EmployeesInfo;
+
+select Employees_salary from EmployeesInfo;
+
+drop view EmployeesInfo;
