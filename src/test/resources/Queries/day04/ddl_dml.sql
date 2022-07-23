@@ -131,7 +131,10 @@ DROP TABLE agileteam;
     -- Trunc --> will delete all table content/data
     -- DROP  --> Delete table itself with datas
 
-commit;
+commit;-- to save changes
+
+--view --> it is not exist in database with data.It is just a virtual table to reuse that query
+--Table--> it is exist in database with their data
 
 
-
+select * from EMPLOYEES;
