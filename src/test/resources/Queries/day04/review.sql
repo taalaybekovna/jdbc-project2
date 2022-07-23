@@ -47,3 +47,9 @@ select * from employees;
                                            from EMPLOYEES
                                            order by SALARY asc)
                   where ROWNUM<4);
+
+-- Why we have 2 result in here . We already used distinct to make salaries unique ?
+    -- 3rd min query will return one value as 2400.
+    -- But we are looking for who has that salary
+    -- 2 employees has same salary that s why it return 2 result
+
