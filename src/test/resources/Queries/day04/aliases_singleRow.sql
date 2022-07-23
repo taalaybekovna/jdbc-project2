@@ -95,4 +95,7 @@ order by 2;
 
 
 -- IQ from screenshot
-select FIRST_NAME
+select FIRST_NAME,salary from EMPLOYEES
+where SALARY>3000  -- we dont any employee in our db that s why I am using 3000
+order by lower(substr(FIRST_NAME,-3)) asc,SALARY desc ;
+
