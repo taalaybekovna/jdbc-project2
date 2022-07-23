@@ -51,7 +51,30 @@ select concat(EMAIL,'@gmail.com') as full_email from EMPLOYEES;
 
 
 --LOWER
+select lower(concat(EMAIL,'@gmail.com')) as full_email from EMPLOYEES;
+
+
 --UPPER
+select upper(concat(EMAIL,'@gmail.com')) as full_email from EMPLOYEES;
 
+-- INITCAP
+-- It makes first letter uppercase
+select EMAIL from EMPLOYEES;
+select initcap(EMAIL) from EMPLOYEES;
 
+-- LENGTH
+-- It will length of provided data
 
+select length(email) from EMPLOYEES;
+
+-- display all the employees first name and length of it in the result order them based on length
+select FIRST_NAME,length(FIRST_NAME) as length_firstname from EMPLOYEES
+order by length(FIRST_NAME);
+
+--by  column aliases
+select FIRST_NAME,length(FIRST_NAME) as length_firstname from EMPLOYEES
+order by length_firstname;
+
+--by  column index
+select FIRST_NAME,length(FIRST_NAME) as length_firstname from EMPLOYEES
+order by 2;
