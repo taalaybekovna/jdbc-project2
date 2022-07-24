@@ -25,22 +25,26 @@ from DEPARTMENTS d left  join  EMPLOYEES e
 select  * from employees;
 select * from departments;
 
-select FIRST_NAME,DEPARTMENT_NAME from DEPARTMENTS d right join EMPLOYEES e
+select FIRST_NAME,DEPARTMENT_NAME
+from DEPARTMENTS d right join EMPLOYEES e
     on d.DEPARTMENT_ID = e.DEPARTMENT_ID;
 
 -- left
-select FIRST_NAME,DEPARTMENT_NAME from EMPLOYEES e left join DEPARTMENTS d
-                                                                on d.DEPARTMENT_ID = e.DEPARTMENT_ID;
+select FIRST_NAME,DEPARTMENT_NAME
+from EMPLOYEES e left join DEPARTMENTS d
+     on d.DEPARTMENT_ID = e.DEPARTMENT_ID;
 
 --4.Display all first_name and department_name
 --including the  department without employee  and  employees  without departments
 
-select FIRST_NAME,DEPARTMENT_NAME from DEPARTMENTS d full join EMPLOYEES e
+select FIRST_NAME,DEPARTMENT_NAME
+from DEPARTMENTS d full join EMPLOYEES e
     on d.DEPARTMENT_ID = e.DEPARTMENT_ID;
 
 
 --5.Display All cities and related country names
-select city,COUNTRY_NAME from LOCATIONS l inner join COUNTRIES c
+select city,COUNTRY_NAME
+from LOCATIONS l inner join COUNTRIES c
         on l.COUNTRY_ID = c.COUNTRY_ID;
 
 
@@ -48,14 +52,47 @@ select city,COUNTRY_NAME from LOCATIONS l inner join COUNTRIES c
 select * from COUNTRIES;
 select * from locations;
 
-select city,country_name from LOCATIONS l right join COUNTRIES c
+select city,country_name
+from LOCATIONS l right join COUNTRIES c
     on l.COUNTRY_ID = c.COUNTRY_ID;
 
 --left
-select city,country_name from COUNTRIES c left join LOCATIONS l
-                                                     on l.COUNTRY_ID = c.COUNTRY_ID;
+select city,country_name
+from COUNTRIES c left join LOCATIONS l
+   on l.COUNTRY_ID = c.COUNTRY_ID;
 
 
 --7.Display all department name and  street adresss
+select * from DEPARTMENTS;
+select * from LOCATIONS;
+
+select DEPARTMENT_NAME , STREET_ADDRESS
+from DEPARTMENTS d inner join  LOCATIONS l
+        on d.LOCATION_ID = l.LOCATION_ID;
+
+
 --8.Display first_name,last_name and department_name,city for all employees
+        -- Ellen                     Sales            Oxford
+
+ select FIRST_NAME,LAST_NAME,DEPARTMENT_NAME,city from EMPLOYEES e
+        inner join DEPARTMENTS d
+            on e.DEPARTMENT_ID = d.DEPARTMENT_ID
+        inner join LOCATIONS l
+            on d.LOCATION_ID = l.LOCATION_ID;
+
+select  * from  EMPLOYEES;
+select  * from DEPARTMENTS;
+select * from LOCATIONS;
+select * from COUNTRIES;
+
+
+
 --9.Display first_name,last_name and department_name,city,country_name for all employees
+-- Ellen                     Sales            Oxford     United Kingdom
+select FIRST_NAME,LAST_NAME,DEPARTMENT_NAME,city,COUNTRY_NAME from EMPLOYEES e
+       inner join DEPARTMENTS d
+          on e.DEPARTMENT_ID = d.DEPARTMENT_ID
+       inner join LOCATIONS l
+         on d.LOCATION_ID = l.LOCATION_ID
+       inner join COUNTRIES c
+        on l.COUNTRY_ID = c.COUNTRY_ID;

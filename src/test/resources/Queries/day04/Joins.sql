@@ -63,3 +63,6 @@ Matching part + only unique for RIGHT+LEFT tables
 select FIRST_NAME,LAST_NAME,A.ADDRESS_ID,C.ADDRESS_ID,ADDRESS,PHONE
 from CUSTOMER C full join   ADDRESS A
                              ON C.ADDRESS_ID = A.ADDRESS_ID;
+
+
+select * from
