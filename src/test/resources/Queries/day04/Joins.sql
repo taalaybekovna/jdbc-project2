@@ -92,3 +92,4 @@ SELECT customer_id, first_name, last_name,customer.ADDRESS_ID,ADDRESS.ADDRESS_ID
 FROM customer FULL OUTER JOIN address
                               ON customer.address_id = address.address_id
 WHERE ADDRESS.ADDRESS_ID IS NULL OR CUSTOMER.ADDRESS_ID IS NULL;
+

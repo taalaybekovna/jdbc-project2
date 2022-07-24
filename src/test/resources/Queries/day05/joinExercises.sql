@@ -96,3 +96,40 @@ select FIRST_NAME,LAST_NAME,DEPARTMENT_NAME,city,COUNTRY_NAME from EMPLOYEES e
          on d.LOCATION_ID = l.LOCATION_ID
        inner join COUNTRIES c
         on l.COUNTRY_ID = c.COUNTRY_ID;
+
+
+--10.Display first_name,last_name and department_name,city who is living in United Kingdom
+select FIRST_NAME,LAST_NAME,DEPARTMENT_NAME,city,COUNTRY_NAME from EMPLOYEES e
+                      inner join DEPARTMENTS d
+                         on e.DEPARTMENT_ID = d.DEPARTMENT_ID
+                      inner join LOCATIONS l
+                         on d.LOCATION_ID = l.LOCATION_ID
+                      inner join COUNTRIES c
+                         on l.COUNTRY_ID = c.COUNTRY_ID
+Where COUNTRY_NAME='United Kingdom';
+
+select * from LOCATIONS;
+select * from COUNTRIES;
+
+--without country name
+select FIRST_NAME,LAST_NAME,DEPARTMENT_NAME,city from EMPLOYEES e
+      inner join DEPARTMENTS d
+           on e.DEPARTMENT_ID = d.DEPARTMENT_ID
+      inner join LOCATIONS l
+           on d.LOCATION_ID = l.LOCATION_ID
+
+Where COUNTRY_ID='UK';
+
+
+--11.Display how many employee we have for each country name
+select COUNTRY_NAME,count(*)  from EMPLOYEES e
+         inner join DEPARTMENTS d
+               on e.DEPARTMENT_ID = d.DEPARTMENT_ID
+         inner join LOCATIONS l
+               on d.LOCATION_ID = l.LOCATION_ID
+         inner join COUNTRIES c
+               on l.COUNTRY_ID = c.COUNTRY_ID
+GROUP BY COUNTRY_NAME
+order by count(*);
+
+
