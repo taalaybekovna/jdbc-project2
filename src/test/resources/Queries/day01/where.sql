@@ -40,7 +40,7 @@ where SALARY>6000 and DEPARTMENT_ID=80;
 select FIRST_NAME,SALARY from EMPLOYEES
 where SALARY>=3000 and SALARY<=6000;
 
--- BETWEEN lower AND upper  --> boundries are included
+-- BETWEEN lower AND upper  --> boundaries are included
 -- It will give all matching result within range
 select FIRST_NAME,SALARY from EMPLOYEES
 where SALARY between 3000 and 6000;
