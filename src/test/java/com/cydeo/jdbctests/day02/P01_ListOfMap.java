@@ -52,13 +52,13 @@
 
         @Test
         public void task2() throws SQLException {
-            // DriverManager class getConneciton is used for to make connection with database
+            // DriverManager class getConnection is used for to make connection with database
             Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 
-            // Statemet helps us to execute Query
+            // Statement helps us to execute Query
             Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 
-            // ResutSet stores data that we get from after query execution
+            // ResultSet stores data that we get from after query execution
             // rs is just a variable/object name
             ResultSet rs = statement.executeQuery("select first_name,last_name,salary from employees where rownum<6" );
             ResultSetMetaData rsmd = rs.getMetaData();
@@ -112,13 +112,13 @@
 
         @Test
         public void task3() throws SQLException {
-            // DriverManager class getConneciton is used for to make connection with database
+            // DriverManager class getConnection is used for to make connection with database
             Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 
-            // Statemet helps us to execute Query
+            // Statement helps us to execute Query
             Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 
-            // ResutSet stores data that we get from after query execution
+            // ResultSet stores data that we get from after query execution
             // rs is just a variable/object name
             ResultSet rs = statement.executeQuery("select first_name,last_name,salary from employees where rownum<6" );
             ResultSetMetaData rsmd = rs.getMetaData();
@@ -126,12 +126,12 @@
 
             List<Map<String,Object>> dataList=new ArrayList<>();
 
-            // iteerate each row dynamicly
+            // iterate each row dynamically
             while(rs.next()){
 
                 Map<String,Object> rowMap=new HashMap<>();
 
-                // fill this Map dynamicly
+                // fill this Map dynamically
                 for (int i = 1; i <= rsmd.getColumnCount(); i++) {
                     rowMap.put(rsmd.getColumnName(i),rs.getString(i) );
                 }
